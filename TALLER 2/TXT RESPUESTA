@@ -1,0 +1,68 @@
+TALLER ANALÍTICO 2: TRAZA DE INFERENCIA
+
+Hechos iniciales:
+
+Tiene Motor = True
+Tiene Dos Ruedas = True
+Es Menor de Edad = True
+
+
+CICLO 1
+
+Se revisan las reglas con los hechos iniciales.
+
+R1:
+SI Tiene Motor Y Tiene Dos Ruedas
+ENTONCES Es Motocicleta.
+
+Como ambos hechos son verdaderos, se dispara R1.
+
+Nuevo hecho:
+Es Motocicleta = True
+
+
+CICLO 2
+
+Se vuelven a revisar las reglas.
+
+R2:
+SI Es Motocicleta
+ENTONCES Requiere Casco.
+
+Como Es Motocicleta = True, se dispara R2.
+
+Nuevo hecho:
+Requiere Casco = True
+
+
+CICLO 3
+
+Se vuelven a revisar las reglas.
+
+R3:
+SI Requiere Casco Y Es Menor de Edad
+ENTONCES Permiso Denegado.
+
+Como Requiere Casco = True y Es Menor de Edad = True,
+se dispara R3.
+
+Nuevo hecho:
+Permiso Denegado = True
+
+
+CICLO 4
+
+Se revisan nuevamente las reglas, pero ya no se pueden
+generar hechos nuevos.
+
+El motor de inferencia se detiene.
+
+
+MEMORIA FINAL:
+
+Tiene Motor = True
+Tiene Dos Ruedas = True
+Es Menor de Edad = True
+Es Motocicleta = True
+Requiere Casco = True
+Permiso Denegado = True

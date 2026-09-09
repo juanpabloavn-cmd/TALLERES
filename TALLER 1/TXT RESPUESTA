@@ -1,0 +1,39 @@
+TALLER ANALÍTICO 1: LÓGICA PROPOSICIONAL
+
+Hechos o variables que el sistema debe solicitar al usuario:
+
+- Ingresos anuales.
+- Historial crediticio.
+- Valor de las deudas activas.
+- Si tiene o no avalista.
+
+Reglas de producción:
+
+Regla 1:
+SI los ingresos anuales son superiores a 50.000 USD
+Y el historial crediticio es "Excelente"
+Y las deudas activas son iguales o inferiores a 10.000 USD
+ENTONCES el cliente es elegible para el crédito Hipotecario Plus.
+
+Regla 2:
+SI los ingresos anuales son superiores a 50.000 USD
+Y el historial crediticio es "Excelente"
+Y las deudas activas son superiores a 10.000 USD
+Y el cliente tiene avalista
+ENTONCES el cliente es elegible para el crédito Hipotecario Plus.
+
+Regla 3:
+SI las deudas activas son superiores a 10.000 USD
+Y el cliente no tiene avalista
+ENTONCES el cliente no es elegible para el crédito Hipotecario Plus.
+
+Forma lógica resumida:
+
+SI ingresos > 50000
+Y historial_crediticio = "Excelente"
+Y (deuda_activa <= 10000 O tiene_avalista = Verdadero)
+ENTONCES elegible = Verdadero
+
+SI deuda_activa > 10000
+Y tiene_avalista = Falso
+ENTONCES elegible = Falso
