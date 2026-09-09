@@ -6,19 +6,19 @@
 
 def membresia_triangular(x, a, b, c):
 
-    # Caso especial para cuando el valor está en el punto máximo
+    # Caso especial para el punto máximo
     if x == b:
         return 1.0
 
-    # Fuera del rango del triángulo
+    # Fuera del rango
     if x <= a or x >= c:
         return 0.0
 
-    # Lado ascendente del triángulo
+    # Lado ascendente
     elif a < x < b:
         return (x - a) / (b - a)
 
-    # Lado descendente del triángulo
+    # Lado descendente
     elif b < x < c:
         return (c - x) / (c - b)
 
@@ -30,7 +30,7 @@ def membresia_triangular(x, a, b, c):
 conductores = [3, 6, 12]
 
 
-# 3. EVALUACIÓN DE LOS CONDUCTORES
+# 3. EVALUACIÓN
 
 for experiencia in conductores:
 
@@ -46,17 +46,11 @@ for experiencia in conductores:
         experiencia, 5, 10, 20
     )
 
-
-    # Se guardan los grados de membresía
-
     categorias = {
         "Novato": grado_novato,
         "Intermedio": grado_intermedio,
         "Experto": grado_experto
     }
-
-
-    # Se busca la categoría con mayor grado de membresía
 
     mejor_categoria = max(
         categorias,
@@ -68,22 +62,8 @@ for experiencia in conductores:
 
     print("\nConductor con", experiencia, "años de experiencia")
 
-    print(
-        "Grado Novato:",
-        round(grado_novato, 2)
-    )
+    print("Grado Novato:", round(grado_novato, 2))
+    print("Grado Intermedio:", round(grado_intermedio, 2))
+    print("Grado Experto:", round(grado_experto, 2))
 
-    print(
-        "Grado Intermedio:",
-        round(grado_intermedio, 2)
-    )
-
-    print(
-        "Grado Experto:",
-        round(grado_experto, 2)
-    )
-
-    print(
-        "Categoría principal:",
-        mejor_categoria
-    )
+    print("Categoría principal:", mejor_categoria)

@@ -1,0 +1,57 @@
+TALLER ANALÍTICO 1: CÁLCULO DE GRADOS DE VERDAD
+
+Conjunto difuso: Temperatura Agradable
+
+Valores de la función triangular:
+
+a = 18 °C
+b = 22 °C
+c = 26 °C
+
+
+1. Cálculo del grado de membresía para x = 20 °C
+
+Como 20 se encuentra entre a = 18 y b = 22, se utiliza:
+
+μ(x) = (x - a) / (b - a)
+
+Reemplazando:
+
+μ(20) = (20 - 18) / (22 - 18)
+
+μ(20) = 2 / 4
+
+μ(20) = 0.5
+
+
+2. Cálculo del grado de membresía para x = 25 °C
+
+Como 25 se encuentra entre b = 22 y c = 26, se utiliza:
+
+μ(x) = (c - x) / (c - b)
+
+Reemplazando:
+
+μ(25) = (26 - 25) / (26 - 22)
+
+μ(25) = 1 / 4
+
+μ(25) = 0.25
+
+
+3. Interpretación
+
+El grado de membresía indica qué tanto pertenece un valor al conjunto
+difuso "Temperatura Agradable".
+
+Para 20 °C, el grado de membresía es 0.5, lo que representa una
+pertenencia del 50 % al conjunto.
+
+Para 25 °C, el grado de membresía es 0.25, lo que representa una
+pertenencia del 25 % al conjunto.
+
+Un valor cercano a 1 indica mayor pertenencia y un valor cercano a 0
+indica menor pertenencia.
+
+Esto permite que el sistema trabaje con grados de verdad y no solamente
+con valores Verdadero o Falso.

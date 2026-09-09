@@ -1,0 +1,50 @@
+TALLER ANALÍTICO: PROPAGACIÓN DE FUERZA
+
+
+Regla:
+
+R1: SI (Rentabilidad es ALTA O Impacto Social es ALTO)
+Y Riesgo es BAJO
+ENTONCES Aprobación es SEGURA.
+
+
+Datos:
+
+Rentabilidad ALTA = 0.6
+Impacto Social ALTO = 0.2
+Riesgo BAJO = 0.4
+
+
+1. Cálculo de la fuerza de activación
+
+Primero se evalúa el paréntesis que contiene el operador OR.
+
+En lógica difusa, el operador OR se calcula mediante MAX.
+
+max(0.6, 0.2) = 0.6
+
+Después se evalúa el operador AND con Riesgo BAJO.
+
+En lógica difusa, el operador AND se calcula mediante MIN.
+
+min(0.6, 0.4) = 0.4
+
+Por lo tanto:
+
+Fuerza de activación de R1 = 0.4
+
+
+2. Altura de truncamiento de la conclusión
+
+La conclusión "Aprobación SEGURA" se truncará a la misma altura
+que la fuerza de activación obtenida por la regla.
+
+Altura de truncamiento = 0.4
+
+
+Conclusión:
+
+La regla R1 tiene una fuerza de activación de 0.4.
+
+Por lo tanto, el conjunto difuso correspondiente a
+"Aprobación SEGURA" se trunca a una altura de 0.4.
