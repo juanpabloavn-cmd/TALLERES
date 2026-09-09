@@ -95,4 +95,4 @@ while nuevos_hechos:
 # 3. RESULTADO FINAL
 
 print("\nMemoria final:")
-print(hechos)
+print(hechos) 
