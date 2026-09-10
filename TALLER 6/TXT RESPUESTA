@@ -1,0 +1,69 @@
+TALLER ANALÍTICO: EL ALGORITMO EN PAPEL
+
+
+Datos iniciales:
+
+Total de clientes: 6
+Compraron seguro: 3
+No compraron seguro: 3
+
+La entropía inicial es alta porque existen la misma cantidad
+de respuestas positivas y negativas.
+
+
+PREGUNTA A:
+¿Es mayor de 30 años?
+
+Grupo izquierdo:
+2 compraron
+2 no compraron
+
+Grupo derecho:
+1 compró
+1 no compró
+
+Esta pregunta no logra separar bien los datos porque en ambos
+grupos siguen mezclados clientes que compraron y que no compraron.
+
+
+PREGUNTA B:
+¿Tiene Auto?
+
+Grupo izquierdo:
+3 compraron
+0 no compraron
+
+Grupo derecho:
+0 compraron
+3 no compraron
+
+Esta pregunta separa completamente los dos grupos.
+
+
+1. ¿Cuál pregunta proporciona mayor Ganancia de Información?
+
+La Pregunta B: ¿Tiene Auto?
+
+Esta pregunta reduce más la entropía porque genera dos grupos
+completamente puros.
+
+En un grupo todos compraron seguro y en el otro grupo ninguno
+compró seguro.
+
+Por lo tanto, la Pregunta B tiene mayor Ganancia de Información.
+
+
+2. Regla lógica aprendida por el árbol
+
+SI Tiene Auto = Sí
+ENTONCES Compra Seguro = Sí
+
+SI Tiene Auto = No
+ENTONCES Compra Seguro = No
+
+
+Conclusión:
+
+El árbol de decisión escogería la variable "Tiene Auto" como
+nodo raíz porque es la que mejor separa los datos y reduce
+más el desorden del conjunto.
