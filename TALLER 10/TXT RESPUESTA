@@ -1,0 +1,93 @@
+TALLER ANALÍTICO: DIBUJANDO EL MARGEN
+
+
+Datos:
+
+Clase A:
+A1 = (2,2)
+A2 = (3,3)
+A3 = (4,2)
+
+Clase B:
+B1 = (6,6)
+B2 = (7,8)
+B3 = (8,7)
+
+
+1. LÍNEA ÓPTIMA DE SEPARACIÓN
+
+Los puntos de la Clase A se encuentran en la zona inferior izquierda
+del plano y los puntos de la Clase B se encuentran en la zona superior
+derecha.
+
+La línea óptima debe quedar entre ambos grupos dejando el mayor margen
+posible a cada lado.
+
+Una separación aproximada puede representarse por:
+
+x + y = 9
+
+Esta línea queda entre los puntos más cercanos de ambas clases.
+
+
+2. VECTORES DE SOPORTE
+
+Los vectores de soporte son los puntos más cercanos a la frontera de
+separación.
+
+Para estos datos, los puntos que están más cerca del margen son:
+
+Clase A:
+(3,3)
+(4,2)
+
+Clase B:
+(6,6)
+
+Estos puntos son importantes porque ayudan a determinar la posición
+del hiperplano de separación.
+
+
+3. NUEVO PUNTO (1,1)
+
+Si agregamos un nuevo punto de Clase A en la coordenada (1,1), la
+posición de la frontera no debería cambiar de manera importante.
+
+Esto ocurre porque el punto (1,1) se encuentra lejos de la frontera
+de separación.
+
+SVM se basa principalmente en los puntos más cercanos al margen,
+llamados Vectores de Soporte.
+
+Por lo tanto, un punto alejado de la frontera normalmente no modifica
+la posición del hiperplano.
+
+
+CONCLUSIÓN
+
+La frontera de decisión se determina principalmente por los puntos
+más cercanos entre las dos clases.
+
+Los puntos alejados tienen poca influencia sobre la posición de la
+línea de separación.
+
+REFLEXIÓN SOBRE EL KERNEL RBF
+
+Un kernel lineal funciona adecuadamente cuando las clases pueden
+separarse mediante una línea recta o un hiperplano.
+
+Sin embargo, existen situaciones en las que los datos están mezclados
+o una clase se encuentra rodeada por otra.
+
+En estos casos una frontera recta puede no ser suficiente.
+
+El kernel RBF permite crear fronteras curvas y separar datos que no
+son linealmente separables.
+
+Un ejemplo puede encontrarse en reconocimiento de imágenes, donde las
+características de diferentes objetos pueden distribuirse de forma
+compleja y no pueden separarse correctamente mediante una sola línea.
+
+También puede utilizarse en problemas médicos donde los datos de
+pacientes pertenecientes a distintas categorías se superponen y
+requieren una frontera más flexible.
