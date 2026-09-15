@@ -1,0 +1,251 @@
+TALLER 9
+KNN – ALGORITMO DE LOS K VECINOS MÁS CERCANOS
+
+
+PARTE 1. TALLER ANALÍTICO: LA VOTACIÓN ESPACIAL
+
+
+Datos del ejercicio:
+
+Cliente A = (20, 30) → NO COMPRA
+Cliente B = (40, 50) → COMPRA
+Cliente C = (35, 45) → COMPRA
+
+Punto nuevo = (30, 40)
+
+
+1. CÁLCULO DE DISTANCIAS EUCLIDIANAS
+
+
+Distancia entre el Punto Nuevo y A:
+
+d = √[(20 - 30)² + (30 - 40)²]
+
+d = √[(-10)² + (-10)²]
+
+d = √[100 + 100]
+
+d = √200
+
+d = 14.14
+
+
+Distancia entre el Punto Nuevo y B:
+
+d = √[(40 - 30)² + (50 - 40)²]
+
+d = √[(10)² + (10)²]
+
+d = √[100 + 100]
+
+d = √200
+
+d = 14.14
+
+
+Distancia entre el Punto Nuevo y C:
+
+d = √[(35 - 30)² + (45 - 40)²]
+
+d = √[(5)² + (5)²]
+
+d = √[25 + 25]
+
+d = √50
+
+d = 7.07
+
+
+Resultados:
+
+Distancia a A = 14.14
+
+Distancia a B = 14.14
+
+Distancia a C = 7.07
+
+
+2. CLASIFICACIÓN CON K = 1
+
+
+Cuando K = 1, el algoritmo toma únicamente el vecino más cercano.
+
+El vecino más cercano al Punto Nuevo es el Cliente C, porque su distancia
+es 7.07.
+
+El Cliente C pertenece a la clase COMPRA.
+
+Por lo tanto:
+
+Punto Nuevo = COMPRA
+
+
+3. CLASIFICACIÓN CON K = 3
+
+
+Cuando K = 3, se toman los tres vecinos disponibles.
+
+Las clases son:
+
+Cliente A → NO COMPRA
+
+Cliente B → COMPRA
+
+Cliente C → COMPRA
+
+
+Resultado de la votación:
+
+NO COMPRA = 1 voto
+
+COMPRA = 2 votos
+
+
+Como la clase COMPRA tiene la mayoría de votos, el Punto Nuevo se
+clasifica como:
+
+Punto Nuevo = COMPRA
+
+
+4. ¿HUBO CAMBIO EN LA DECISIÓN?
+
+
+No hubo cambio en la decisión.
+
+Con K = 1, el nuevo cliente se clasificó como COMPRA.
+
+Con K = 3, el nuevo cliente también se clasificó como COMPRA.
+
+La diferencia es que con K = 1 la decisión depende únicamente del vecino
+más cercano, mientras que con K = 3 se toma una decisión por mayoría de votos.
+
+
+CONCLUSIÓN DE LA PARTE ANALÍTICA
+
+
+El algoritmo KNN clasifica un nuevo dato comparándolo con los puntos más
+cercanos del conjunto de entrenamiento.
+
+En este ejercicio, el nuevo cliente fue clasificado como COMPRA tanto
+con K = 1 como con K = 3.
+
+Esto ocurre porque el vecino más cercano pertenece a la clase COMPRA y,
+al tomar los tres vecinos, la mayoría también pertenece a esa clase.
+
+
+
+PARTE 2. TALLER DE LABORATORIO: CLASIFICADOR UNIVERSAL
+
+
+Para la parte práctica se amplió el conjunto de entrenamiento a 10 clientes
+y se agregó una tercera característica.
+
+Las características utilizadas fueron:
+
+Edad
+
+Salario
+
+Número de Hijos
+
+
+Las etiquetas utilizadas fueron:
+
+0 = NO COMPRA
+
+1 = COMPRA
+
+
+El nuevo cliente utilizado para la prueba fue:
+
+Edad = 33
+
+Salario = 42
+
+Número de Hijos = 1
+
+
+PRUEBA CON K = 1
+
+
+Se creó un modelo KNN con:
+
+n_neighbors = 1
+
+El modelo buscó el vecino más cercano al nuevo cliente y realizó la
+clasificación de acuerdo con la clase de ese vecino.
+
+
+PRUEBA CON K = 5
+
+
+Después se cambió el valor de K a:
+
+n_neighbors = 5
+
+En este caso, el modelo tomó los cinco vecinos más cercanos y realizó una
+votación entre sus clases.
+
+El resultado obtenido en la ejecución fue:
+
+Clase predicha = 1
+
+El cliente COMPRA
+
+
+Esto significa que la mayoría de los cinco vecinos más cercanos pertenecen
+a la clase 1.
+
+
+ANÁLISIS DE K = 1 Y K = 5
+
+
+El valor de K determina cuántos vecinos participan en la decisión.
+
+Con K = 1, la clasificación depende completamente del punto más cercano.
+
+Con K = 5, la decisión se toma considerando cinco vecinos, por lo que el
+resultado depende de la mayoría.
+
+Usar un valor mayor de K puede hacer que la clasificación sea menos
+sensible a un único punto aislado.
+
+
+PREGUNTA DE ANÁLISIS:
+MALDICIÓN DE LA DIMENSIONALIDAD
+
+
+Si en lugar de trabajar con tres características se trabajara con 1.000
+características, el cálculo de la Distancia Euclidiana tendría que considerar
+una cantidad mucho mayor de dimensiones.
+
+A medida que aumenta el número de dimensiones, los puntos quedan más
+dispersos en el espacio y las distancias entre ellos pueden volverse más
+parecidas.
+
+Esto hace más difícil identificar cuáles puntos son realmente cercanos.
+
+Como KNN basa su funcionamiento en la distancia entre los datos, una gran
+cantidad de dimensiones puede reducir la efectividad del algoritmo.
+
+Este problema se conoce como la Maldición de la Dimensionalidad.
+
+
+CONCLUSIÓN GENERAL
+
+
+KNN es un algoritmo de clasificación que utiliza la cercanía entre los datos
+para tomar decisiones.
+
+Primero calcula las distancias entre el nuevo punto y los datos conocidos.
+Luego selecciona los K vecinos más cercanos y determina la clase por mayoría
+de votos.
+
+En el ejercicio práctico se utilizó un dataset con tres características y
+se probaron diferentes valores de K.
+
+Con K = 5, el nuevo cliente fue clasificado como COMPRA.
+
+El ejercicio permitió observar cómo el valor de K influye en la clasificación
+y cómo el aumento excesivo de dimensiones puede dificultar el uso de las
+distancias en el algoritmo.
