@@ -1,0 +1,190 @@
+TALLER 11
+REDES NEURONALES - EL PERCEPTRÓN
+
+
+PARTE 1. TALLER ANALÍTICO: CALCULANDO EL DISPARO
+
+
+Datos del ejercicio:
+
+X1 = Ingresos = 50
+X2 = Deudas = 20
+
+W1 = 0.8
+W2 = -0.5
+
+Sesgo:
+
+b = -10
+
+
+1. CÁLCULO DEL VALOR Z
+
+
+La ecuación del Perceptrón es:
+
+Z = (X1 * W1) + (X2 * W2) + b
+
+
+Reemplazando:
+
+Z = (50 * 0.8) + (20 * -0.5) + (-10)
+
+Z = 40 - 10 - 10
+
+Z = 20
+
+
+Por lo tanto:
+
+Z = 20
+
+
+2. FUNCIÓN DE ACTIVACIÓN ESCALÓN
+
+
+La función escalón establece:
+
+Salida = 1, si Z >= 0
+
+Salida = 0, si Z < 0
+
+
+Como:
+
+Z = 20
+
+y 20 >= 0
+
+Entonces:
+
+Salida = 1
+
+
+Por lo tanto, la neurona dispara y el crédito es APROBADO.
+
+
+3. ANÁLISIS DE LOS PESOS
+
+
+El peso W1 asociado a los ingresos es positivo:
+
+W1 = 0.8
+
+Esto tiene sentido porque un mayor nivel de ingresos aumenta la
+posibilidad de aprobar el crédito.
+
+
+El peso W2 asociado a las deudas es negativo:
+
+W2 = -0.5
+
+Esto significa que una mayor cantidad de deuda reduce el valor de Z
+y, por lo tanto, disminuye la posibilidad de aprobar el crédito.
+
+Por esta razón tiene sentido que W2 sea negativo en este escenario.
+
+
+CONCLUSIÓN DE LA PARTE ANALÍTICA
+
+
+El Perceptrón realiza una combinación lineal de las entradas,
+los pesos y el sesgo.
+
+Para el cliente evaluado se obtuvo:
+
+Z = 20
+
+Como Z es mayor o igual a cero, la función escalón genera una
+salida igual a 1.
+
+Resultado:
+
+CRÉDITO APROBADO.
+
+
+
+PARTE 2. TALLER DE LABORATORIO: HACKEANDO LOS PESOS
+
+
+El código inicial utiliza un Perceptrón para representar una
+compuerta lógica AND.
+
+Para la compuerta AND se utilizaron:
+
+Pesos:
+
+W = [0.5, 0.5]
+
+Sesgo:
+
+b = -0.8
+
+
+Resultados esperados:
+
+[0, 0] -> 0
+
+[0, 1] -> 0
+
+[1, 0] -> 0
+
+[1, 1] -> 1
+
+
+RETO: COMPUERTA OR
+
+
+Para convertir el Perceptrón en una compuerta OR se conservaron
+los pesos:
+
+W = [0.5, 0.5]
+
+y se modificó el sesgo a:
+
+b = -0.5
+
+
+Con estos valores se obtienen los resultados:
+
+[0, 0] -> 0
+
+[0, 1] -> 1
+
+[1, 0] -> 1
+
+[1, 1] -> 1
+
+
+Estos resultados corresponden correctamente a la tabla de verdad
+de la compuerta OR.
+
+
+CONCLUSIÓN GENERAL
+
+
+El Perceptrón recibe unas entradas, las multiplica por unos pesos,
+suma un sesgo y después utiliza una función de activación para
+generar una salida.
+
+La modificación de los pesos y del sesgo cambia el comportamiento
+de la neurona.
+
+En este ejercicio se comprobó que un mismo Perceptrón puede
+representar diferentes compuertas lógicas ajustando sus parámetros.
+
+Para AND:
+
+W = [0.5, 0.5]
+b = -0.8
+
+
+Para OR:
+
+W = [0.5, 0.5]
+b = -0.5
+
+
+Este ajuste manual representa el principio básico de lo que
+posteriormente realiza una red neuronal durante el entrenamiento:
+modificar sus pesos para obtener la salida esperada.
