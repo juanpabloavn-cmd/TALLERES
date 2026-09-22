@@ -1,0 +1,180 @@
+TALLER 12
+REDES NEURONALES DENSAS O MULTICAPA
+
+
+PARTE 1. TALLER ANALÍTICO: CONTANDO PARÁMETROS
+
+
+Arquitectura de la red:
+
+Capa de Entrada:
+3 variables
+
+- Edad
+- Ingresos
+- Deuda
+
+
+Capa Oculta:
+4 neuronas
+
+
+Capa de Salida:
+1 neurona
+
+
+1. PESOS ENTRE LA CAPA DE ENTRADA Y LA CAPA OCULTA
+
+
+Cada una de las 3 entradas se conecta con cada una de las
+4 neuronas de la capa oculta.
+
+Cantidad de pesos:
+
+3 x 4 = 12
+
+
+Por lo tanto:
+
+Pesos entre Entrada y Capa Oculta = 12
+
+
+2. SESGOS DE LA CAPA OCULTA
+
+
+Cada neurona de la capa oculta tiene un sesgo propio.
+
+Como existen 4 neuronas:
+
+Sesgos de la Capa Oculta = 4
+
+
+3. PESOS Y SESGO ENTRE LA CAPA OCULTA Y LA CAPA DE SALIDA
+
+
+Las 4 neuronas ocultas se conectan con la única neurona de salida.
+
+Cantidad de pesos:
+
+4 x 1 = 4
+
+
+La neurona de salida tiene un sesgo:
+
+Sesgos de salida = 1
+
+
+Por lo tanto:
+
+Pesos entre Capa Oculta y Salida = 4
+
+Sesgo de salida = 1
+
+
+4. TOTAL DE PARÁMETROS ENTRENABLES
+
+
+Pesos Entrada - Oculta = 12
+
+Sesgos Capa Oculta = 4
+
+Pesos Oculta - Salida = 4
+
+Sesgo de Salida = 1
+
+
+Total:
+
+12 + 4 + 4 + 1 = 21
+
+
+RESPUESTA:
+
+La red neuronal tiene 21 parámetros entrenables.
+
+
+
+PARTE 2. PROPAGACIÓN HACIA ADELANTE
+
+
+La red utiliza una función Sigmoide para transformar los valores
+numéricos obtenidos en cada capa a valores comprendidos entre 0 y 1.
+
+La operación principal de una capa se realiza mediante:
+
+Z = np.dot(X, W) + b
+
+
+Después se aplica la función Sigmoide:
+
+A = 1 / (1 + exp(-Z))
+
+
+Z representa la combinación lineal de las entradas, los pesos y los sesgos.
+
+A representa la salida de la capa después de aplicar la función de activación.
+
+
+
+RETO DIMENSIONAL
+
+
+Inicialmente la red procesa un solo cliente:
+
+X = [0.5, 0.8, 0.2]
+
+
+Posteriormente se modifica X para procesar dos clientes al mismo tiempo:
+
+X = [
+    [0.5, 0.8, 0.2],
+    [0.1, 0.9, 0.9]
+]
+
+
+La matriz X pasa de tener dimensión:
+
+(3,)
+
+a tener dimensión:
+
+(2, 3)
+
+
+La matriz de pesos W1 tiene dimensión:
+
+(3, 4)
+
+
+Al realizar:
+
+np.dot(X, W1)
+
+el resultado tiene dimensión:
+
+(2, 4)
+
+
+Esto significa que se calculan simultáneamente las salidas de las
+4 neuronas ocultas para los 2 clientes.
+
+
+Después:
+
+np.dot(A1, W2)
+
+produce una salida para cada cliente.
+
+
+CONCLUSIÓN
+
+
+El procesamiento por lotes permite que una misma operación matricial
+procese varios clientes simultáneamente.
+
+No es necesario utilizar un ciclo para calcular cada cliente de forma
+individual.
+
+Este comportamiento demuestra por qué las operaciones matriciales son
+fundamentales en las redes neuronales y permiten acelerar el cálculo
+cuando se procesan grandes cantidades de información.
